@@ -31,6 +31,7 @@ public class UserServiceImpl implements IUserService {
 	public User reg(User user) 
 			throws UsernameConflictException, 
 				InsertDataException {
+		System.out.println("UserServiceImpl的reg()");
 		// 验证用户名与密码的格式是否正确
 		if (!TextValidator.checkUsername(user.getUsername())) {
 			throw new UsernameFormatException("尝试登录的用户名(" + user.getUsername() + ")格式不正确！");
@@ -194,6 +195,7 @@ public class UserServiceImpl implements IUserService {
 	 * @return 成功插入的用户数据
 	 */
 	private User insert(User user) {
+		System.out.println("UserServiceImpl的insert()执行用户注册，给密码加盐并存储在数据库中等操作");
 		// 在参数user中封装那些不由外部提供的数据：
 		// 1. 生成随机盐，并封装到user中
 		String salt = UUID.randomUUID().toString().toUpperCase();
@@ -211,6 +213,7 @@ public class UserServiceImpl implements IUserService {
 		user.setCreatedUser("[System]");
 		user.setModifiedUser("[System]");
 		
+		System.out.println("UserServiceImpl的insert()开始执行userMapper接口的insert()操作，利用xml映射文件，执行具体的sql操作，根据返回行判断是否注册成功");
 		// 插入用户数据
 		Integer rows = userMapper.insert(user);
 		if (rows == 1) {

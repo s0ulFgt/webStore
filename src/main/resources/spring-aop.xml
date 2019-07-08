@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context" 
@@ -20,11 +20,11 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 	
-	<!-- 组件扫描 -->
+	组件扫描
 	<context:component-scan 
 		base-package="cn.tedu.store.aop" />
 	
-	<!-- 开启自动代理 -->
+	开启自动代理
 	<aop:aspectj-autoproxy />
 	
 </beans>
@@ -34,3 +34,4 @@
 
 
 
+ -->
